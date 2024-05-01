@@ -13,7 +13,7 @@ else:
 
 @app.route('/')
 def hello_world():
-    return 'Hello, Docker!'
+    return 'Hello,fuck you Docker!!!!!!!!'
 
 
 @app.route('/widgets')
@@ -42,6 +42,8 @@ def db_init():
         with conn.cursor() as cur:
             cur.execute("DROP TABLE IF EXISTS widgets")
             cur.execute("CREATE TABLE widgets (name VARCHAR(255), description VARCHAR(255))")
+            cur.execute("INSERT INTO widgets (name, description) VALUES (%s, %s)", ("widget_name", "widget_description"))
+
     conn.close()
 
     return 'init database'
